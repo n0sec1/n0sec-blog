@@ -1,19 +1,9 @@
 const projectsData = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
-  },
-  {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: 'Giftcard Phishing Moitoring',
+    description: `n0sec is working on a tool to automatically monitor and gather data on giftcard phishing ads conducted via Google Ads. This is investigated by downloading data and constantly checking the uptime of phishing ads.`,
+    imgSrc: '/static/images/vanilla.png',
+    href: 'https://www.github.com',
   },
 ]
 
