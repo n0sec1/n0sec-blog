@@ -23,3 +23,57 @@ summary: Right now lots of fraudsters have adopted SIM swapping as their crime o
 images: []
 layout: PostLayout
 ---
+
+## "Remo Snatching"
+
+In the current fraud scene, SIM swapping is popular due to its low technical requirements. SIM swapping doesn't require the ability to develop and make a ransomware FUD - it's a sophisticated yet easy-to-execute crime. SIM swaps can be perputrated many ways, but in my research I found one way to be particularly entertaining. This is 'remo snatching', the act of stealing a mobile carriers employee tablets.
+
+## What is a Remo?
+
+A remo is T-Mobile terminology for a 'remote tablet'. This is what employees & managers use to do business at the store, it has features like viewing a customer's account, acting as a PoS (point of service), and some basic account activities.
+
+## Stealing the Remo
+
+Stealing the remo is arguably the easy part of this operation. It goes exactly how a typcial store robbery goes, you walk in, pretend like you want to buy something, and then when an opportunity to snatch the tablet out of an employee's hands comes, you steal the tablet, run to the getaway car, and leave. From my interviews with those who have done this, they say that you ask to buy a prepaid SIM card and they will put the remo in your hands, for you to type some billing information. This is the point where you run.
+
+There are typically multiple people in these operations. There is the 'runner', the person who is actually grabbing the tablet from the store employee, a friend with him to hold the door (optional), a getaway driver, and then the person who actually knows how to use the tablet, the activator.
+
+[Linked](https://streamable.com/6r4hhh) is a video of a person who stole a tablet talking to the store manager about the tablet, just to reveal that he stole the tablet. The demographic of people stealing these tablets are typically young.
+
+## Tapestry & Logins
+
+Whenever you steal the tablet, the activator must be ready with clients to sell SIM swaps too along with a login. The app 'Tapestry' is how T-Mobile works with customers accounts, and is the app that fraudsters use to SIM swap lines. The tablet will be deactivated within 30min-2hr in most cases, so the fraudster must use their time diligently. Most tablets have passcodes from T-Mobile, and while some are guessable, others aren't. This means that the fraudster also must keep the tablet screen on just to be safe, but in my interviews I was informed this wasn't hard because typically the entire time someone has the tablet they are using it to conduct SIM swaps.
+
+The SIM swapper logins with a 'manny login', a phished manager login for T-Mobile. This is typically obtained via voice phishing random store's managers, calling as T-Mobile headquarters and directing the manager to a phishing page for whatever reason, sometimes for 'diagnostics' or 'checking a company ticket'. This manager login grants the swapper privilege to bypass security measures in Tapestry to prevent SIM swaps, T-Mobile trust their managers to only swap the lines of clients. The real world, legitimate application of this is if someone with T-Mobile lost their old phone and they needed a new phone activated with their previous T-Mobile number. The fraudster typically obtains the manny login beforehand, from my understanding of the market these go for about 750 to 1,000 USD, which is a small price to pay. A SIM Swap goes for about 2-2.5k USD upfront, depending on demand.
+
+The activator looks up the target by their phone number, and then changes the phone number's active ICCID. The ICCID is the sim card identifier, in this case it is to a phone line owned by a hacker who will then control the number until the changes are reverted on the customer's account.
+
+![An image from inside a stolen remo tablet.](/static/images/remo/tmobile_simupdated.jpg)
+
+The profit of this model is massive most days. If a person manages to obtain a tablet, they typically pay the runners & drivers about 5K USD in total. If the fraudster manages to sell 5 SIM Swaps, they make 5K USD and have their runners paid off. Most times, within the 30 minutes there is enough demand to sell more. This is also short-scoped, some people who remo snatch have partners who they will 'split' the victim's cryptocurrency with. Instead of providing an upfront premium of 2,500 USD, the balance of a target will be split 50/50 amongst the swapper and the person who needs the swap done. This is normally only done for people who have dealt together many times.
+
+![A disabled I-Pad from T-Mobile](/static/images/remo/tmo_tablet15.jpg)
+
+## Manny Logins
+
+'Manny' logins, or manager logins, as mentioned in the previous paragraph are obtained via voice phishing and are needed. In order to authorize the SIM Swap on Tapestry, a manager has to be signed into Tapestry. These are obtained via 'callers', people who call random T-Mobile stores until they convince a manager to visit their webpage and enter their credentials. A typical script for this involves calling from T-Mobile headquarters, utilizing a service like Google Voice to mask your real number, and convincing the manager to visit a given web URL that is a clone of T-Mobile's Okta sign-in. Once they visit the webpage, they must enter their credentials, and then nothing will happen. The caller will have to explain that something went wrong and they will call back later, but they will never call back. This login is then sold for about 750-1000 USD depending on the demand on the given day.
+
+![The T-Mobile Okta login.](/static/images/remo/okta.png)
+
+It is worth noting these logins alone, without a tablet, cannot be utilized to do a SIM swap.
+
+![A T-Mobile Calling Script.](/static/images/remo/tmo_script.png)
+
+## Why T-Mobile
+
+Remo snatching is no longer common due to T-Mobile taking action against remo snatching's effectiveness. Now, to do conduct a SIM swap on Tapestry, it requires a manager login and a second authorization, which is hard to do. There is still no good solution to this, in an interview with a prominent remo snatcher, they claimed that they stole a tablet and tried follow the steps using multiple logins they had bought and they had no success.
+
+T-Mobile additionally issues tablets that have cellular data, unlike AT&T and Verizon which require store wi-fi to conduct any carrier related actions. This makes it harder for SIM swappers, as they have would theoretically have to steal the tablet and still be in range of the wi-fi somehow, despite all the chaos they just caused. This is why AT&T and Verizon as of the writing of this article isn't being remo snatched. Additionally, they typically require higher authorizations for SIM swaps, but SIM swappers for the most part are talented in bypassing those authorization steps regardless.
+
+This is not to say T-Mobile didn't have limitations though, "fraud victims", customers with extra security on their account, were not vulnerable to these attacks. T-Mobile required special authentication for these accounts, thereby even remo snatching couldn't grant access to SIM Swap fraud victim customers of T-Mobile.
+
+![Here is the patch of this remo-snatching trick.](/static/images/remo/patch.jpg)
+
+## The Patch
+
+The patch of remo snatching was T-Mobile was both requiring 2 logins to approve a SIM swap without customer authorization and being on store wi-fi, basically catching up to other carrier's policies. Remo snatching is far less common now, but it has made the usage of insiders, or 'innys' far more prominent.
