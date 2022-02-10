@@ -1,0 +1,49 @@
+---
+title: SIM Swapping via Live Chat
+date: '2022-02-08'
+tags:
+  [
+    'gman',
+    'sim swap',
+    'sim',
+    'simmer',
+    'tmo',
+    'vzw',
+    'tmobile',
+    'verizon',
+    'att',
+    'live chat',
+    'social engineer',
+    'se',
+  ]
+draft: true
+summary: In this article, n0sec analyzes another method of SIM swapping, utilizing carrier's live chat systems. This social engineering tactic, while it does require more access to a target, is widely used at the moment due to the patching of remo snatching.
+images: []
+layout: PostLayout
+---
+
+## The Live Chat SIM Swap
+
+In my previous article, I discussed how fraudsters conduct SIM Swaps via stolen iPads at the T-Mobile carrier. The SIM Swapping via live chat, while it does require greater information on the victim, works more widespread and cost the hacker no money upfront. There is a popular seller in the SIM swapping community who goes by 'G Man' who sells a course on how to abuse live chat representatives at American carriers to gain access to customer's private account information. The goal of the course he sells is to give the basic rundown of how the social engineering tactic works. It is sold for about 950 USD on Telegram markets.
+
+![G-Man advertising his method.](/static/images/livechat/gman_2.jpg)
+
+## MyATT
+
+MyATT can be socially engineered in a rather standardized approach. In interviews with prominent SIM swappers who have experience utilizing live chats, ATT has one private method and one more public method. I can only speak on the more public way of doing this, as I lack the knowledge to know how to do this more private method. The private method is said to be better than the method I have knowledge of because it can bypass ATT's 2FA feature.
+
+MyATT accounts, while uncommon, are relatively easily to compromise. With access to the MyATT account, the PIN to the owner's account can frequently be reset depending on the live chat support agent being spoken to, along with an actual SIM swap being conducted. G-Man describes the method as fairly simple, if the email of the target is full access, reset the MyATT password and access the account. Now the fraudster can either access live support via phone or text chat, people say that phone is quicker, but live chat is better for operational security. Now, it is up to the fraudster to convince the live support agent that the account owner has lost their phone while on a boat trip and to swap the line to a new phone number. The live support agent will ask for some personally identifying information, typically things such as account PIN, first/last name, and address in some cases. Over the phone, I've heard cases of the ATT support agent asking for social security number, but this is relatively easy to obtain regardless. The fraudster has a second phone compatible with the ATT along with a prepaid ATT sim kit, or they have a holder who has both. The fraudster provides the IMEI of the phone to have the line ported out to along with the ICCID of the SIM card, and in most cases the support agent will swap the line. This process can be harder if the victim has a business account with ATT, which has a second special type of PIN that is longer and harder to guess.
+
+The main problem with this process is the PIN. People in the SIM swapping community have told me that PIN isn't always needed for AT&T live chat, as you can convince the support agent to reset the PIN via email, but I am unsure if these claims are certain. In many cases, fraudsters research the target's email activity and attempt to figure out likely PINs, such as important birthdays or last four of SSN. If this doesn't work, then I've heard cases of people calling the victim as AT&T and socially engineering their account PIN.
+
+## VZW & MyTmobile
+
+VZW, a common abbreviation for Verizon Wireless amongst fraudsters, has a very similar social engineering process. Similar to ATT, you can call Verizon or contact the on-site live chat to conduct the swap, and PIN is still needed, but can be guessed or reset in many cases. MyTmobile is a similar portal to MyATT and once again has similar security protocols, the methodology for SIM swapping via live chat would be similar.
+
+![G-Man explaining susceptible carriers.](/static/images/livechat/gman_1.jpg)
+
+## Limitations
+
+You may wonder, why doesn't everyone SIM swap via live chat? It is significantly easier than every other method of SIM swapping and seems very straightforward. This is because the prerequisites for SIM swapping a mobile carrier via live chat are pretty hard to come by, you need email access to the target and they have to have their carrier login linked to their email. For both circumstances to be present is rare. People in the fraud community call these circumstances 'bill in mail', meaning that the carrier bill is within the email. This must be manually checked for each email which is an inconvenience itself. It is also seldom that a high balance target doesn't utilize 2FA alone for their email, so the odds of the high balance target not having 2FA integrated on their email, while having bill in mail, is just rare. Below is an attached copy of G-Man's method for socially engineering live representatives.
+
+https://www.file.io/download/jYNa88dN0DpR
