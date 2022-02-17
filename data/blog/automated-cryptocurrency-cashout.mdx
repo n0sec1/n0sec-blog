@@ -1,0 +1,37 @@
+---
+title: Automated Cryptocurrency Cashout
+date: '2022-02-14'
+tags: ['sim swap', 'simmer', 'sim', 'coinbase', 'cashbase', 'coinbase pro']
+draft: true
+summary: n0sec analyzes the market for automated cashout tools in the market. These tools involve estimating balances, in reaction to Coinbase's patch of the 'NFA balance check tools'. Amongst this is other popular new tools in the same 'lane' as Coinbase, tools to locate viable targets for SIM swappers.
+images: []
+layout: PostLayout
+---
+
+## Cashbase
+
+Cashbase is an automated 'balance checker', a solution to a gap in the market. For a while from about October to early December there was a wave of fraudsters utilizing an exploit in Coinbase to check any Coinbase account's balance, as long as the fraudster has a valid common password on the target.
+
+How Cashbase works is fairly simple, the tool estimates the balance of a given Coinbase account based on the email activity. After every transaction on Coinbase, a receipt is sent to the customer, including details like the amount of money involved in the transaction. If the customer has large amounts of money moving in and out of their account, this indicates that they may be a viable SIM swap target. Tools also sometimes have functions like 'seed checkers', where they check if a user has a stored seed in their wallet, but I'm unsure if this is common or even working amongst some tools.
+
+Cashbase is very limited in its usecases. Cashbase doesn't work on NFA targets (not-full email access), and doesn't estimate a precise balance. Additionally, some users will learn about tools like these and delete their Coinbase receipts in anticipation of such hackers.
+
+![Cashbase Interface](/static/images/cashbase/cashbase.jpg)
+
+## Similar Tools
+
+There are competitors like Cashbase but claim to have bypasses or efficiency that Cashbase doesn't have. A big claim that other checkers utilize to try to gain popularity over Cashbase is higher CPM, checkers per minute, especially for valid mail checks. Cashbase claims that these other services inflate their numbers to increase sales, whether these claims are true I'm unsure.
+
+Additionally, as Cashbase is just an advanced cracking tool with many modules (configs for sites), competitors claim to have more modules. Cashbase has plenty of modules with new concepts like 'Cashapp logs' (which balance check CashApp accounts) and can be used to extract a lot of value from just one email. Any tool similar to Cashbase is essentially just a software to check a full access email for any lootable resources.
+
+![Cashbase Ad](/static/images/cashbase/cashbase_ad.jpg)
+
+## Cashbase Targets
+
+People sell Cashbase targs on blackhat marketplaces to SIM swappers - as they are easy targets for swappers. This is rare and often times scams, as most people who use Cashbase are already experienced in SIM swapping so they can handle that themselves, but not everyone has experience or can handle the upfront liability of paying for a SIM swap attack.
+
+![Sale of Cashbase Targs](/static/images/cashbase/cashbase_targs.jpg)
+
+## Conclusion
+
+Cashbase is essentially a cracking tool that is popular right now because there is a gap in the market for SIM swap targets. Cashbase is an excellent tool to obtain targets to SIM swap, but is only effective on email providers such as Yahoo/AOL (due to their login system being abused by Cashbase), and cannot fully estimate balance. It is certainly a step down from the previous Coinbase exploits to check balance.
