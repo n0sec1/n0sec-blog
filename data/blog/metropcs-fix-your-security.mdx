@@ -1,0 +1,82 @@
+---
+title: MetroPCS - Fix Your Security!
+date: '2022-02-17'
+tags:
+  [
+    'metro',
+    'metropcs',
+    'purple',
+    'metro by mobile',
+    'sim',
+    'simswap',
+    'sim swap',
+    'tools',
+    'acti',
+    'cert',
+    'login',
+    'gen',
+    'edge',
+  ]
+draft: false
+summary: MetroPCS is easily the most vulnerable carrier to SIM swaps at the moment. Hackers have easy access to swaps at any minute of the day, and this isn't through some elementary social engineering tactic. It is the by far most consistent carrier that is vulnerable to SIM swaps.
+images: []
+layout: PostLayout
+---
+
+## Introduction
+
+When writing this article, I thought I had understood the market for Metro SIM swaps. I understood that they are the easiest carrier - but I didn't understand how easy it was. I managed to get in contact with someone who was able to screenshare their access to MetroPCS's Edge interface live, on-call, and show me just how easy MetroPCS is to SIM swap.
+
+## Edge
+
+Edge is MetroPCS's web-interface, meant to be utilized internally by Metro employees to perform account actions for customers. The interface has access to things like pulling subscriber information, porting in a phone number from a different carrier, viewing all the lines on a person's account, changing the ICCID of the linked SIM card, and more. Payment history is even vulnerable to being seen on certain MetroPCS logins.
+
+This is as powerful as a remo is, but accessible online, not requiring some sort of in-person robbery. Additionally, this is cheap. All you need is about 1000 to 2500 USD depending on who you buy from.
+
+![An advertisement for Metro tools](/static/images/metro/kim_tools.jpg)
+
+## Certs
+
+The domain for MetroPCS's Edge tool is [http://edge.metropcs.com](edge.metropcs.com), but you will notice instantly it won't ping or load for you. This is because the website is protected with a certification, to access the site, you must have a store's certification installed onto your computer and then import it when accessing the domain. This, while is a step to good security, is problematic. These certifications are not IP-whitelisted or machine whitelisted, as long as I'm on a USA IP, even a VPN like Mullvad, I can access the site when I have the certification installed. An effective approach to help patch this is make access only possible when connected to a company internal VPN, that might not solve everything, but anything is better than this.
+
+These certs can be obtained for a few hundred dollars on blackhat messaging groups and require no technical expertise to use. They can be used across many machines, which they are. Most certs being sold in market are being used by 10+ fraudsters, in interviews I encountered nearly every interviewee using the same cert. The source of the certifications are unclear to me still, I understand each store has unique certifications that they use, and they are all password protected, but I do not understand how they are being initially obtained by these fraudsters. My assumptions are infections, insiders at MetroPCS, or social engineering tactics - but this remains widely unclear.
+
+## Logins
+
+Logins are easy to obtain for MetroPCS, especially compared to other carrier services I have researched. There is a tool spread throughout the community that bruteforces these logins, utilizing request and USA rotating proxies. The login IDs follow a certain format, typically a string of 8 integers, from my understanding they consistently start with 4. The bruteforce tool generates millions of combinations utilizing this knowledge and attempt common passwords combinations at MetroPCS, like Spring2022, Metro2022, Metro2023, Metro2022!. From my observations, people manage to get logins with this method. Logins tend to stop working quickly, but this isn't a problem due to how easy it is to generate or buy them on market for less than three hundred dollars typically.
+
+![Login Generator](/static/images/metro/metro_logins.jpg)
+
+There are also 'DSG' logins, which are technical support logins to my understanding. These are far less common in the market, but they have high privileges and can view a customer's transaction history.
+
+![The DSG Interface](/static/images/metro/dsg.jpg)
+
+## OTP / OTP tool
+
+MetroPCS luckily has somewhat of a 'user access management' system in Edge, where an OTP bot is supposed to be received by the customer to allow someone on the Edge interface to access a customer account. This is for the security of the customer, but this OTP unfortunately bypassed with another tool in the market known as the OTP bypass tool. The tool automatically answers security questions prompted when attempting to access the account without the OTP, and then unlocks any action the person using Edge may want to do the customer account.
+
+![OTP Tool](/static/images/metro/otp_tool.jpg)
+
+## Swaps, Reverts, and more
+
+MetroPCS has two mainly desired features amongst fraudsters. Once they access the customer's account, they first swap the line to an ICCID that their holder is in control of. A holder is someone that holds the device that the hijacked phone number will be ported onto and is typically a different person than the person using Edge tools for operational security.
+
+Nowadays, when attempting to SIM swap a customer of a site like Coinbase, Coinbase can detect when a line has recently been SIM swapped for certain carriers. This includes MetroPCS & T-Mobile, Coinbase will issue a 1440-hour security hold after they detect the primary number on the account used for authentication has been swapped to a new device. To prevent this, a hacker may send the one-time passcode when logging into the Coinbase to the original line, perform the SIM swap, resend code, input the code, and then 'revert' after. This 'revert' gives service back to the victim, and sometimes it makes the SIM swap hard to notice aside from a text from MetroPCS signaling that their line has been swapped. This '1440 bypass' is extremely useful and is only possible due to the revert feature. The OTP-bot tool also has a process to automate this, making it even easier to manipulate for a SIM swapper.
+
+Reverts not only allow for a 1440 bypass on Coinbase, but they also prevent blacklisting on holder's devices. MetroPCS can blacklist IMEI's (the identification number of a phone) if they are found conducting fraudulent activities like SIM swapping, meaning the holder has to go buy a new phone. Activators can protect their holder's phone if they revert.
+
+## Automated Swap Bots
+
+Although it is rather easy to manage and get MetroPCS tools up, it requires a lot of stress. Logins become invalid quickly, so new ones must be generated, which requires proxies and a good VPS. Additionally, the tool could get patched meaning the upfront spent on the software could be lost. For this reason, people buy access to Telegram bots that will automatically perform MetroPCS SIM swaps at any minute of the day. Just like the software, it comes at a steep initial cost around 5K USD for the bot that I found being used, but it doesn't require any maintaining fees.
+
+These bots come with all the features on traditional tools, such as swaps, reverts, etc. All the user must do is input the target, the desired new ICCID, and they are set.
+
+![The interface of these Telegram Bots.](/static/images/metro/edge_swapot.jpg)
+
+## Port-Ins
+
+Another important part of the panel is the ability to port-in phone numbers from other carriers. This doesn't work for all lines, but it is a very critical capability that may be exploited more in the future. With this function, people from more secure carriers like Verizon could be transferred over to MetroPCS without the victim's permission by the fraudster, making them much easier to SIM swap. MetroPCS has amplified security for these port-ins opposed to internal account actions, but this remains a liability nonetheless. In tools that I saw when investigating, I saw a port-in script, but I am doubtful that it works and I have heard it only works in very aligned conditions.
+
+## Conclusion
+
+If MetroPCS intends on improving their security, they must make take action against these weak points in their system. Until then, people will continue to SIM swap targets that use Metro with extreme ease, causing financial damage via lawsuits for MetroPCS & financial damage for the victims.
