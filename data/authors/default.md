@@ -3,8 +3,8 @@ name: n0 Sec
 avatar: /static/images/avatar.png
 occupation: Beginning Security Researcher
 company: Student
-email: n0@n0sec.net
-twitter: https://twitter.com/n0sec1
+email:
+twitter:
 github: https://github.com/n0sec1
 ---
 

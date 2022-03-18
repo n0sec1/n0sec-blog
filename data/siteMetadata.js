@@ -10,9 +10,9 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'n0@n0sec.net',
-  github: 'https://github.com/n0sec1',
-  twitter: 'https://twitter.com/n0sec1', 
+  email: '',
+  github: '',
+  twitter: '',
   locale: 'en-US',
   analytics: {
     // supports plausible, simpleAnalytics, umami or googleAnalytics
