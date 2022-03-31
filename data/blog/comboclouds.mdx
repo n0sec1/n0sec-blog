@@ -1,0 +1,43 @@
+---
+title: Comboclouds
+date: '2022-03-29'
+tags: ['cracking', 'combolist', 'crack', 'combos', 'nulled', 'cracked', 'combocloud', 'combo cloud']
+draft: false
+summary: As previously covered, cracking accounts to conduct a takeover utilizes previously leaked account credentials. Those account credentials are found in combolist, which are typically the 'difficult' part of cracking accounts. However, now, there are centralized providers for combolist, called 'combo clouds'.
+images: []
+layout: PostLayout
+---
+
+## Combolist
+
+Combolist are an essential component of cracking, the act of taking over massive amounts of accounts simultaneously. Combolist are big, organized list of leaked login credentials, typically of the format user:password or email:password. The source of these combolist is typically data leaks from companies that have been a victim of SQL injections. Fraudsters will scan websites for vulnerabilities using “dorks”, or pre-configured, specialized searches for the presence of certain elements on a website that indicate that the website is vulnerable to a SQL injection. To further review the importance of combolist, please review the following [previously published article from us at n0sec](https://www.n0sec.io/blog/cracking-investigated). To summarize, combolist are leaked databases obtained by fraudsters that have user logins that fraudsters use in the hope that the leaked user’s information is the same on other sites. For instance, if a user’s information was leaked from Adobe, then it is likely that the user used the same login information for a service like Coinbase, as users tend to repeat the same login information across multiple websites.
+
+## What makes a combolist valuable?
+
+Most companies encrypt their database nowadays, making the passwords useless for the practical purposes of cracking accounts. Companies use encryption algorithms to make the passwords unreadable to hackers, thereby not useful to try to guess passwords to the user's other accounts on different websites. An example of these encryption algorithms is B-Crypt, which takes the user's password, encrypts it, stores it in an encrypted fashion, so in the case of that the website is hacked and the database is leaked, the password is not useful (however other valuable data may be leaked). Some fraudsters are able to decrypt the databases, or large portions of them, depending on the strength of the hash. While these hashing tend to be algorithmically sound and nearly impossible to organically decrypt, hackers are able to try lists of previously leaked passwords, encrypt them into the hashing format of the database they want to decrypt, and compare the hashes. For instance, if a database is leaked and the passwords are in md5, a hacker would find the most common 1,000,000 passwords and convert them to md5, then check the hashes against that of the list. If the two hashes match across the two different sets, that means that the user is using the corresponding password that was encrypted in the initially unencrypted list. Basically, you are encrypting common passwords, and checking if any of those newly encrypted hashes match the hashes in the leaked database. Some fraudsters have better password list, software, and hardware for this purpose, as processes like this are hardware intensive and the speed of the process can be slow with bad hardware.
+
+A combolist is valuable if the passwords are mainly decrypted and from one specific website that hasn't hard their database publicly leaked. A leaked combolist is used by many fraudsters and is thereby more like to become 'saturated', meaning many hackers are attempting to use the information from the leaked list, which can raise flags for the hacked user, however, private combolist are typically only sold to 1 customer, and many times the leaked information is unseen thereby only used by the buyer of the combolist.
+
+The first economic factor as mentioned is whether or not the database is publicly leaked or privately sold. To be clear, the reason why some 'public databases' are sold is because they claim to have more decrypted passwords from the original leaked database. However, there is other relevant factors, such as the niche and geolocation of the database. Obviously certain websites tend towards users in certain countries, an Italian delivery service will have mainly Italian users, so this can be valuable for people targeting an Italian exchange with the credentials obtained from this database. On top of that, the niche of a website is relevant for the same reason, a database is more valuable to someone if the source is from a cryptocurrency website, as if they're on one cryptocurrency site, they're probably on others. These are typically called 'targeted combolist', targeted towards a certain geolocaton or niche.
+
+The final most important factor that determines a combolist price is the domains of the emails in the combolist. The ending of the email indicates how vulnerable it is to a full account take-over, essentially if the account can be full access (FA) or not. A full access account is useful because it allows the fraudster to gain more insight on the victim of the dataleak, but however certain email providers have better security than others, Yahoo and Aol are typically considered vulnerable however Gmail is considered secure.
+
+![An example of combolist sales](/static/images/combos/cracked_sales.png)
+
+![An example of Breached Club](/static/images/combos/breachd_club.png)
+
+## Combo Clouds
+
+Combo clouds are services that sell decrypted combolist of all different niche and geolocation. Combo clouds typically sell subscription-based services offering monthly access to their combolist, which are considered "semi-private", only customers have access to the combolist included. The cost of a combolist cloud typically depends on the reputability of it amongst the amount of available data breaches that they have decrypted and put on the website. The most popular combo cloud service is [Foenem](http://foenem.pw), but there is plenty. The other examples I found during my research are similar, such as [Kurakk.Cloud](https://main.kurakk.cloud/index). These services operate similarly, charging a user a monthly cost to download some databases from the site that they will use to try to crack accounts.
+
+![Data Clouds](/static/images/combos/datacloud1.png)
+
+![Data Clouds 2](/static/images/combos/datacloud2.png)
+
+However, there are 'good' and 'bad' combo clouds. Some combo clouds are looked down upon because they have 'saturated' databases, meanwhile a combo cloud who has primarily private, unsaturated database is more valuable. You can see the niches and geolocations a combo cloud has before you buy typically, so consumers are able to make a wise decision regarding their needs.
+
+![Foenem Prices](/static/images/combos/foenem_prices.png)
+
+## Conclusion
+
+The market is fairly simple for combo clouds, however, the goal of this article was to inform the reader the market conditions and the process of obtaining combolist. Combolist are obtained a variety of ways, and combo clouds are the moment are one of the most popular methods for those cracking to get large databases of user credentials.
