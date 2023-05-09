@@ -1,5 +1,4 @@
 
-;<script async src="https://analytics.umami.is/script.js" data-website-id="d930321c-1afc-48ff-97ad-d792f2bbb7c3"></script>
 import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
